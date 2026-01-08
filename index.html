@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Westeros</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="snow"></div>
+
+<!-- PAGE 1: Welcome -->
+<div class="page active" id="welcome">
+    <div class="welcome">
+        <h1>Welcome to Westeros</h1>
+        <button class="btn" onclick="enterSite()">ENTER</button>
+    </div>
+</div>
+
+<!-- PAGE 2: MemberList -->
+<div class="page" id="memberlist">
+    <h1 class="title">Westeros<br><span>MEMBERLIST</span></h1>
+    <input type="text" class="search" placeholder="Search by name..." onkeyup="searchMember(this.value)">
+    <div class="list"></div>
+    <div class="button-group">
+        <button class="btn nav" onclick="goBack()">BACK</button>
+        <span class="page-info">1 / 1</span>
+        <button class="btn nav" onclick="goNext()">NEXT</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
