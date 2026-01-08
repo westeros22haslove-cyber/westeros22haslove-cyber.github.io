@@ -5,7 +5,7 @@ const members = [
     { name: "Sunny Westeros", fb: "https://www.facebook.com/profile.php?id=100077895669164" },
     { name: "Tyga Westeros", fb: "https://www.facebook.com/profile.php?id=100080619094803" },
     { name: "Nolan Westeros", fb: "https://www.facebook.com/nolan.powell.359" },
-    { name: "Juju Westeros", fb: "https://www.facebook.com/nolan.powell.359" },
+    { name: "Juju Westeros", fb: "https://www.facebook.com/p1sdontbreakmyheart" },
 ];
 
 const membersPerPage = 10; // feed grid สวยไม่เยอะเกิน
@@ -132,6 +132,7 @@ function searchMember(value) {
         renderPage(currentPageIndex); // แสดงหน้าปกติ
     }
 }
+
 
 
 
