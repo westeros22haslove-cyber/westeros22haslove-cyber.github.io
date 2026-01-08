@@ -8,6 +8,7 @@ const members = [
     { name: "Juju Westeros", fb: "https://www.facebook.com/p1sdontbreakmyheart" },
     { name: "Snow Westeros", fb: "https://www.facebook.com/snow.horifly" },
     { name: "Thai Westeros", fb: "https://www.facebook.com/profile.php?id=61583037603144" },
+    { name: "June Westeros", fb: "https://www.facebook.com/june.i.917375" },
 ];
 
 const membersPerPage = 10; // feed grid สวยไม่เยอะเกิน
@@ -134,6 +135,7 @@ function searchMember(value) {
         renderPage(currentPageIndex); // แสดงหน้าปกติ
     }
 }
+
 
 
 
