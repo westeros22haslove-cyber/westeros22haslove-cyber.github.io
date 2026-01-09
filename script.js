@@ -10,7 +10,8 @@ const members = [
     { name: "Thai Westeros", fb: "https://www.facebook.com/profile.php?id=61583037603144" },
     { name: "June Westeros", fb: "https://www.facebook.com/june.i.917375" },
     { name: "ter Westeros", fb: "https://www.facebook.com/nonix.lynx?locale=th_TH" },
-    { name: "tea Westeros", fb: "https://www.facebook.com/profile.php?id=61584451264327&locale=th_TH" },
+    { name: "tea Westeros", fb: "https://www.facebook.com/profile.php?id=61584451264327&locale=th_TH" },\
+    { name: "Grey Westeros", fb: "https://www.facebook.com/grey.safesides?rdid=7XcKXprvpi2zURWW&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BR9YfQY3s%2F#" },
 ];
 
 const membersPerPage = 10; // feed grid สวยไม่เยอะเกิน
@@ -137,6 +138,7 @@ function searchMember(value) {
         renderPage(currentPageIndex); // แสดงหน้าปกติ
     }
 }
+
 
 
 
