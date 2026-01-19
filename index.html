@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Westeros&Sins</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kanit:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="image/newlogo.png?v=999">
+  </head>
+  <body>
+
+    <section id="landingPage" class="landing-overlay">
+      <div class="landing-content">
+        <div class="main-logo-container">
+          <img src="image/newlogo.png" alt="Westeros&Sins Logo" class="landing-logo">
+        </div>
+        <h1 class="landing-title">WESTEROS & SINS</h1>
+        <button onclick="enterSite()" class="enter-btn">ENTER SITE</button>
+      </div>
+    </section>
+
+    <nav class="navbar" id="mainNav" style="display: none;">
+      <div class="nav-container">
+        <div class="logo">
+            <img src="image/newlogo.png" style="width:30px; margin-right:10px;"> Westeros&Sins
+        </div>
+        <div class="nav-menu">
+          <button onclick="showPage('memberPage')" id="nav-mem" class="nav-btn active">Members</button>
+          <button onclick="showPage('adminPage')" id="nav-adm" class="nav-btn">Admin</button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="memberPage" class="page" style="display: none;">
+      <div class="hero-section">
+        <div class="glow-logo">MEMBERLIST</div>
+        <h1>Westeros&Sins</h1>
+        <p class="subtitle">© 2026 Designed & Developed by Raizen Sins</p>
+      </div>
+
+      <div class="control-panel">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="memberSearch" placeholder="ค้นหาชื่อสมาชิก..." onkeyup="renderMembers()" />
+        </div>
+        <div class="filter-tabs">
+          <button class="tab active" onclick="setFilter('all', this)">All</button>
+          <button class="tab" onclick="setFilter('Westeros', this)">Westeros</button>
+          <button class="tab" onclick="setFilter('Sins', this)">Sins</button>
+        </div>
+      </div>
+      <div class="member-grid" id="memberGrid"></div>
+    </section>
+
+    <section id="adminPage" class="page" style="display: none;">
+      <div class="login-container">
+        <div id="loginFormSection" class="admin-card">
+          <h2>ADMIN ACCESS</h2>
+          <form onsubmit="handleAuth(event)">
+            <div class="input-group">
+              <label>Username</label>
+              <input type="text" id="userInp" required placeholder="กรอกชื่อผู้ใช้" />
+            </div>
+            <div class="input-group">
+              <label>Password</label>
+              <input type="password" id="passInp" required placeholder="กรอกรหัสผ่าน" />
+            </div>
+            <button type="submit" class="main-btn">LOGIN</button>
+          </form>
+        </div>
+
+        <div id="dashboardSection" class="admin-card" style="display: none">
+          <h2>ADMIN DASHBOARD</h2>
+          <div class="input-group">
+            <label>ชื่อสมาชิก</label>
+            <input type="text" id="newMemberName" placeholder="เช่น Aef Wellesley" />
+          </div>
+          <div class="input-group">
+            <label>ลิงก์ Facebook</label>
+            <input type="text" id="newMemberFB" placeholder="https://facebook.com/..." />
+          </div>
+          <div class="input-group">
+            <label>สังกัด/กลุ่ม</label>
+            <select id="newMemberGroup">
+              <option value="Westeros">Westeros</option>
+              <option value="Sins">Sins</option>
+            </select>
+          </div>
+          <button onclick="addNewMember()" class="main-btn">ADD MEMBER</button>
+          <button onclick="handleLogout()" class="logout-btn">LOGOUT</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
