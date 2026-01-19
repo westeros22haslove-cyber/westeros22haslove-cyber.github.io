@@ -1,6 +1,6 @@
 // สมาชิก
 const members = [
-    { name: "Whiteshark Westeros", fb: "https://www.facebook.com/whiteshark.lamoonboy" },
+    { name: "Raizen Westeros", fb: "https://www.facebook.com/whiteshark.lamoonboy" },
     { name: "Ralph Westeros", fb: "https://www.facebook.com/ralph.winterfell" },
     { name: "Sunny Westeros", fb: "https://www.facebook.com/profile.php?id=100077895669164" },
     { name: "Tyga Westeros", fb: "https://www.facebook.com/profile.php?id=100080619094803" },
@@ -138,4 +138,5 @@ function searchMember(value) {
         renderPage(currentPageIndex); // แสดงหน้าปกติ
     }
 }
+
 
