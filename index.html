@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Westeros & Sins:The Abyss</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="image/logo2.png" />
+  </head>
+  <body>
+
+    <div class="hell-background">
+        <div class="fog"></div>
+        <div class="fog"></div>
+    </div>
+    
+    <section id="landingPage" class="landing-overlay">
+      <div class="landing-content">
+        <div class="demon-sigil-container">
+            <div class="sigil-ring inner"></div>
+            <div class="sigil-ring outer"></div>
+            <i class="fa-solid fa-dragon demon-icon"></i>
+        </div>
+        
+        <h1 class="landing-title" data-text="WESTEROS & SINS">WESTEROS & SINS</h1>
+        <p class="landing-subtitle">WHERE DEMONS DWELL</p>
+        
+        <button onclick="enterSite()" class="soul-btn">
+            <span>OFFER YOUR SOUL</span>
+            <div class="liquid"></div>
+        </button>
+      </div>
+    </section>
+
+    <nav class="navbar" id="mainNav" style="display: none;">
+      <div class="nav-container">
+        <div class="logo">
+            <i class="fa-solid fa-khanda"></i> W&S
+        </div>
+        <div class="nav-menu">
+          <button onclick="showPage('memberPage')" id="nav-mem" class="nav-btn active">LEGION</button>
+          <button onclick="showPage('adminPage')" id="nav-adm" class="nav-btn">THRONE</button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="memberPage" class="page" style="display: none;">
+      <div class="hero-section">
+        <div class="header-glitch">THE LEGION</div>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="control-panel">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-eye"></i>
+          <input type="text" id="memberSearch" placeholder="Search for a soul..." onkeyup="renderMembers()" />
+        </div>
+        <div class="filter-tabs">
+          <button class="tab active" onclick="setFilter('all', this)">ALL</button>
+          <button class="tab" onclick="setFilter('Westeros', this)">WESTEROS</button>
+          <button class="tab" onclick="setFilter('Sins', this)">SINS</button>
+        </div>
+      </div>
+      
+      <div class="member-grid" id="memberGrid"></div>
+    </section>
+
+    <section id="adminPage" class="page" style="display: none;">
+      <div class="login-container">
+        
+        <div id="loginFormSection" class="dark-altar">
+          <h2 class="altar-title"><i class="fa-solid fa-dungeon"></i> GATE KEEPER</h2>
+          <form onsubmit="handleAuth(event)">
+            <div class="rune-input">
+              <input type="text" id="userInp" required placeholder=" " />
+              <label>USERNAME</label>
+              <span class="focus-border"></span>
+            </div>
+            <div class="rune-input">
+              <input type="password" id="passInp" required placeholder=" " />
+              <label>PASSWORD</label>
+              <span class="focus-border"></span>
+            </div>
+            <button type="submit" class="summon-btn">BREAK SEAL</button>
+          </form>
+        </div>
+
+        <div id="dashboardSection" class="dark-altar" style="display: none">
+          <h2 class="altar-title">SUMMONING RITUAL</h2>
+          
+          <div class="rune-input">
+            <input type="text" id="newMemberName" placeholder=" " />
+            <label>SOUL NAME</label>
+          </div>
+          <div class="rune-input">
+            <input type="text" id="newMemberFB" placeholder=" " />
+            <label>CONTRACT LINK (FB)</label>
+          </div>
+          <div class="select-wrapper">
+            <select id="newMemberGroup">
+              <option value="Westeros">Westeros</option>
+              <option value="Sins">Sins</option>
+            </select>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+
+          <button onclick="addNewMember()" class="summon-btn add">INVOKE</button>
+          <button onclick="handleLogout()" class="leave-btn">BANISH SELF</button>
+        </div>
+      </div>
+      <div id="hellGate" class="hell-gate-container">
+    <div class="gate-visual">
+        <i class="fa-solid fa-dungeon gate-icon closed"></i> <i class="fa-solid fa-fire gate-icon open"></i>    <span>DRAG HERE TO BANISH</span>
+    </div>
+</div>
+
+</section>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+      function createEmbers() {
+        const container = document.body;
+        const emberCount = 50; 
+        for(let i=0; i<emberCount; i++) {
+          let ember = document.createElement('div');
+          ember.classList.add('ember');
+          ember.style.left = Math.random() * 100 + 'vw';
+          ember.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          ember.style.animationDelay = Math.random() * 5 + 's';
+          container.appendChild(ember);
+        }
+      }
+      window.addEventListener('load', createEmbers);
+    </script>
+  </body>
+</html>
